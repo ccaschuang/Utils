@@ -27,4 +27,9 @@ if (typeof (ElementPool) == 'undefined') {
 	ElementPool.getTotalTable = function() {
 		return JCache.get("#total_list");
 	};
+	ElementPool.getTotalTpl = function() {
+		var tpl = JCache.get("#total_tpl").clone();
+		tpl.attr("id","");
+		return tpl;
+	};
 })();
