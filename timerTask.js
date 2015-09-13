@@ -36,3 +36,28 @@ execTask = {
 		}
 	}
 };
+
+//--------------------------------------------
+//----------Task executer---------------------
+if (typeof (TaskExecuter) == 'undefined') {
+	TaskExecuter = {};
+}
+(function() {
+	var queue = [];
+	var currentJob = null;
+	TaskExecuter.execute = function() {
+		if(queue.length!=0) {
+			currentJob = queue.pop();
+			currentJob.execute();
+		} else {
+			setTimeout(TaskExecuter.execute, 500);
+		}
+	};
+	TaskExecuter.addTask = function(task) {
+		queue.push(task);
+	};
+	TaskExecuter.reExecute = function() {
+		currentJob.execute();
+	};
+})();
+
