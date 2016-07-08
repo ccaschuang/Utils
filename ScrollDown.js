@@ -1,3 +1,10 @@
+// ==UserScript== 
+// @name       Ads Clean Up
+// @namespace  ccaschuang@gmail.com
+// @version    0.1
+// @description  Test to clean up ads
+// @copyright  2014+ ccas
+// ==/UserScript==
 // Use
 //1: 用chrome 按右鍵 檢查元素
 //2: 切換下面的Tab到 "Console" Tab
